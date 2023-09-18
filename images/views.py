@@ -101,3 +101,31 @@ class Stock6Sign202304ViewSet(viewsets.ModelViewSet):
         obj = Stock6Sign202304.objects.get(cStockID=stockid_pk)
         result = Stock6Sign202304Serializer(obj)
         return Response(result.data, status=status.HTTP_200_OK)
+    
+
+class Stock6Sign202308ViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list`, `create`, `retrieve`,
+    `update` and `destroy` actions.
+
+    Additionally we also provide an extra `highlight` action.
+    """
+
+    queryset = Stock6Sign202308.objects.all()
+    serializer_class = Stock6Sign202308Serializer
+
+    # [ GET ] /api/image/random/
+    #@action(detail=False, methods=["get"], url_path="getstockinfo")
+    #def get_stock_info(self, request):
+
+        #obj = Stock6Sign202304.objects.all()
+        #result = Stock6Sign202304Serializer(obj)
+        #return Response(result.data, status=status.HTTP_200_OK)
+    
+    # [ GET ] /api/image/random/
+    @action(detail=False, methods=["get"], url_path="getstockinfo/(?P<stockid_pk>[^/.]+)")
+    def get_stock_info(self, request, stockid_pk, pk=None):
+
+        obj = Stock6Sign202308.objects.get(cStockID=stockid_pk)
+        result = Stock6Sign202308Serializer(obj)
+        return Response(result.data, status=status.HTTP_200_OK)
