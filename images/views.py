@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets, status
-from images.models import Images, Stock6Sign202212, Stock6Sign202304
-from images.serializers import ImageSerializer, Stock6Sign202212Serializer, Stock6Sign202304Serializer
+from images.models import Images, Stock6Sign202212, Stock6Sign202304, Stock6Sign202308
+from images.serializers import ImageSerializer, Stock6Sign202212Serializer, Stock6Sign202304Serializer, Stock6Sign202308Serializer
+
 
 # from ptt_beauty_images import settings
 from rest_framework.response import Response
