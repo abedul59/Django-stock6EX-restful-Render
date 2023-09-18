@@ -115,18 +115,95 @@ class Stock6Sign202308ViewSet(viewsets.ModelViewSet):
     queryset = Stock6Sign202308.objects.all()
     serializer_class = Stock6Sign202308Serializer
 
-    # [ GET ] /api/image/random/
-    #@action(detail=False, methods=["get"], url_path="getstockinfo")
-    #def get_stock_info(self, request):
 
-        #obj = Stock6Sign202304.objects.all()
-        #result = Stock6Sign202304Serializer(obj)
-        #return Response(result.data, status=status.HTTP_200_OK)
-    
     # [ GET ] /api/image/random/
     @action(detail=False, methods=["get"], url_path="getstockinfo/(?P<stockid_pk>[^/.]+)")
     def get_stock_info(self, request, stockid_pk, pk=None):
 
         obj = Stock6Sign202308.objects.get(cStockID=stockid_pk)
         result = Stock6Sign202308Serializer(obj)
+        return Response(result.data, status=status.HTTP_200_OK)
+    
+
+class Stock6Sign202309ViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list`, `create`, `retrieve`,
+    `update` and `destroy` actions.
+
+    Additionally we also provide an extra `highlight` action.
+    """
+
+    queryset = Stock6Sign202309.objects.all()
+    serializer_class = Stock6Sign202309Serializer
+
+
+    # [ GET ] /api/image/random/
+    @action(detail=False, methods=["get"], url_path="getstockinfo/(?P<stockid_pk>[^/.]+)")
+    def get_stock_info(self, request, stockid_pk, pk=None):
+
+        obj = Stock6Sign202309.objects.get(cStockID=stockid_pk)
+        result = Stock6Sign202309Serializer(obj)
+        return Response(result.data, status=status.HTTP_200_OK)
+    
+    
+class Stock6Sign202310ViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list`, `create`, `retrieve`,
+    `update` and `destroy` actions.
+
+    Additionally we also provide an extra `highlight` action.
+    """
+
+    queryset = Stock6Sign202310.objects.all()
+    serializer_class = Stock6Sign202310Serializer
+
+
+    # [ GET ] /api/image/random/
+    @action(detail=False, methods=["get"], url_path="getstockinfo/(?P<stockid_pk>[^/.]+)")
+    def get_stock_info(self, request, stockid_pk, pk=None):
+
+        obj = Stock6Sign202310.objects.get(cStockID=stockid_pk)
+        result = Stock6Sign202310Serializer(obj)
+        return Response(result.data, status=status.HTTP_200_OK)
+    
+
+class Stock6Sign202311ViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list`, `create`, `retrieve`,
+    `update` and `destroy` actions.
+
+    Additionally we also provide an extra `highlight` action.
+    """
+
+    queryset = Stock6Sign202311.objects.all()
+    serializer_class = Stock6Sign202311Serializer
+
+
+    # [ GET ] /api/image/random/
+    @action(detail=False, methods=["get"], url_path="getstockinfo/(?P<stockid_pk>[^/.]+)")
+    def get_stock_info(self, request, stockid_pk, pk=None):
+
+        obj = Stock6Sign202311.objects.get(cStockID=stockid_pk)
+        result = Stock6Sign202311Serializer(obj)
+        return Response(result.data, status=status.HTTP_200_OK)
+
+
+class Stock6Sign202312ViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list`, `create`, `retrieve`,
+    `update` and `destroy` actions.
+
+    Additionally we also provide an extra `highlight` action.
+    """
+
+    queryset = Stock6Sign202312.objects.all()
+    serializer_class = Stock6Sign202312Serializer
+
+
+    # [ GET ] /api/image/random/
+    @action(detail=False, methods=["get"], url_path="getstockinfo/(?P<stockid_pk>[^/.]+)")
+    def get_stock_info(self, request, stockid_pk, pk=None):
+
+        obj = Stock6Sign202312.objects.get(cStockID=stockid_pk)
+        result = Stock6Sign202312Serializer(obj)
         return Response(result.data, status=status.HTTP_200_OK)
