@@ -62,7 +62,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-	    'https://stock6-restfulex.onrender.com/',
+	    #'https://stock6-restfulex.onrender.com/',
+        'https://react-stock6restful.vercel.app/'
 	]
 
 ROOT_URLCONF = 'ptt_beauty_images.urls'
