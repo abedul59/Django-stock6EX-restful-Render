@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets, status
-from images.models import Images, Stock6Sign202212, Stock6Sign202304, Stock6Sign202308, Stock6Sign202309, Stock6Sign202310, Stock6Sign202311, Stock6Sign202312
-from images.serializers import ImageSerializer, Stock6Sign202212Serializer, Stock6Sign202304Serializer, Stock6Sign202308Serializer, Stock6Sign202309Serializer, Stock6Sign202310Serializer, Stock6Sign202311Serializer, Stock6Sign202312Serializer
+from images.models import Images, Stock6Sign202212, Stock6Sign202304, Stock6Sign202308, Stock6Sign202309, Stock6Sign202310, Stock6Sign202311, Stock6Sign202312, Stock6Sign202402
+from images.serializers import ImageSerializer, Stock6Sign202212Serializer, Stock6Sign202304Serializer, Stock6Sign202308Serializer, Stock6Sign202309Serializer, Stock6Sign202310Serializer, Stock6Sign202311Serializer, Stock6Sign202312Serializer, Stock6Sign202402Serializer
 
 
 # from ptt_beauty_images import settings
@@ -206,4 +206,24 @@ class Stock6Sign202312ViewSet(viewsets.ModelViewSet):
 
         obj = Stock6Sign202312.objects.get(cStockID=stockid_pk)
         result = Stock6Sign202312Serializer(obj)
+        return Response(result.data, status=status.HTTP_200_OK)
+
+class Stock6Sign202402ViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list`, `create`, `retrieve`,
+    `update` and `destroy` actions.
+
+    Additionally we also provide an extra `highlight` action.
+    """
+
+    queryset = Stock6Sign202402.objects.all()
+    serializer_class = Stock6Sign202402Serializer
+
+
+    # [ GET ] /api/image/random/
+    @action(detail=False, methods=["get"], url_path="getstockinfo/(?P<stockid_pk>[^/.]+)")
+    def get_stock_info(self, request, stockid_pk, pk=None):
+
+        obj = Stock6Sign202402.objects.get(cStockID=stockid_pk)
+        result = Stock6Sign202402Serializer(obj)
         return Response(result.data, status=status.HTTP_200_OK)
